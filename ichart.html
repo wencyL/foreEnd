@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<body>
+	<div>
+		<input data-index="1" name="test" type="checkbox">
+		<input data-index="2" name="test" type="checkbox">
+		<input data-index="3" name="test" type="checkbox">
+		<input data-index="4" name="test" type="checkbox">
+	</div>
+	
+	<div>
+		<input data-index="1" type="text" value="1">
+		<input data-index="2" type="text" value="2">
+		<input data-index="3" type="text" value="3">
+		<input data-index="4" type="text" value="4">
+	</div>
+
+
+</body>
+<script src="./jquery.min.js"></script>
+<script>
+var arr=new Array();
+function getInputVal(){
+
+}
+
+function chk(){ 
+var obj=document.getElementsByName('test'); //选择所有name="'test'"的对象，返回数组 
+//取到对象数组后，我们来循环检测它是不是被选中 
+var s=''; 
+for(var i=0; i<obj.length; i++){ 
+if(obj[i].checked) s+=obj[i].value+','; //如果选中，将value添加到变量s中 
+} 
+//那么现在来检测s的值就知道选中的复选框的值了 
+alert(s==''?'你还没有选择任何内容！':s); 
+} 
+
+function jqchk(){ //jquery获取复选框值 
+var chk_value =[]; 
+$('input[name="test"]:checked').each(function(){ 
+chk_value.push($(this).val()); 
+}); 
+alert(chk_value.length==0 ?'你还没有选择任何内容！':chk_value); 
+} 
+
+</script>
+</html>
