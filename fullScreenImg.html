@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fullScreenImg</title>
+</head>
+<style>
+	img{
+		max-width: 90%;
+	} 
+</style>
+<body>
+	<img src="./images/1.png" alt="">
+	<img src="./images/2.png" alt="">
+	<div id="imgPop" style="min-height:100vh;width:100vw;background-color:#000;position:fixed;top:0;left:0;text-align:center;display:none;line-height:100vh">
+		<img src="" alt="" style="max-width:90%;margin:0 auto;">
+	</div>
+	<script>
+		window.onload =  function(){
+			var imgPop = document.getElementById("imgPop");
+			imgPop.onclick=function(){
+				imgPop.style.display = "none";
+			};
+			var imgs = document.getElementsByTagName("img");
+			var imgs_len = imgs.length;
+			for(var i = 0 ; i < imgs_len ; i++){
+				(function(j){
+					imgs[j].onclick=function(){
+						imgPop.style.display = "block";
+						imgPop.children[0].setAttribute("src",imgs[j].getAttribute("src"));
+					};
+				})(i)
+			}
+	}
+		
+	</script>
+</body>
+
+
+</html>
