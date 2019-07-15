@@ -5,4 +5,4 @@
 2|--|fullScreenImg.html|好像是某次写移动端的时候用到,全屏看图片
 3|ichart.js|ichart.html|数据可视化，图表
 4|qrCode.js|qr.html|二维码生成
-5|--|wxsdk.js|微信的JSSDK
+5|wxsdk.js|--|微信的JSSDK
